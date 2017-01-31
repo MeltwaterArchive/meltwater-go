@@ -4,11 +4,11 @@ All URIs are relative to *https://api.meltwater.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**PostOauth2Token**](OauthApi.md#PostOauth2Token) | **Post** /oauth2/token | Create an access token
+[**CreateToken**](OauthApi.md#CreateToken) | **Post** /oauth2/token | Create an access token
 
 
-# **PostOauth2Token**
-> OAuth2Token PostOauth2Token($userKey, $authorization, $grantType, $scope)
+# **CreateToken**
+> OAuth2Token CreateToken($userKey, $authorization, $grantType, $scope)
 
 Create an access token
 

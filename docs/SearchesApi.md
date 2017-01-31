@@ -4,11 +4,11 @@ All URIs are relative to *https://api.meltwater.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetV1Searches**](SearchesApi.md#GetV1Searches) | **Get** /v1/searches | List your saved searches.
+[**GetAllSearches**](SearchesApi.md#GetAllSearches) | **Get** /v1/searches | List your saved searches.
 
 
-# **GetV1Searches**
-> SearchesCollection GetV1Searches($userKey, $authorization)
+# **GetAllSearches**
+> SearchesCollection GetAllSearches($userKey, $authorization)
 
 List your saved searches.
 
