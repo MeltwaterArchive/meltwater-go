@@ -46,7 +46,7 @@ type Configuration struct {
 
 func NewConfiguration() *Configuration {
 	return &Configuration{
-		BasePath:      "https://api.meltwater.io",
+		BasePath:      "https://api.meltwater.com",
 		UserName:      "",
 		debug:         false,
 		DefaultHeader: make(map[string]string),
