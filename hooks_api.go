@@ -53,7 +53,7 @@ func NewHooksApiWithBasePath(basePath string) *HooksApi {
  * Creates a hook for one of your predefined searches.
  * Creates a hook for one of your predefined searches.  Delivers search results for the query referenced by thesearch_id to the target_url via HTTP POST. Note that a hook id will be returned on successful creation, this id is needed to delete the hook.     Requires an OAuth access token.
  *
- * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/).
+ * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
  * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
  * @param v1Hooks 
  * @return *Hook
@@ -117,7 +117,7 @@ func (a HooksApi) CreateHook(userKey string, authorization string, v1Hooks PostV
  * Delete an existing hook.
  * Delete an existing hook.  Removes the hook and stops sending any search results to the target_url.    Requires an OAuth access token.
  *
- * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/).
+ * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
  * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
  * @param id Hook ID received from creating a hook
  * @return void
@@ -179,7 +179,7 @@ func (a HooksApi) DeleteHook(userKey string, authorization string, id string) (*
  * List all hooks.
  * List all hooks.     Delivers all previously generated hooks.    Requires an OAuth access token.
  *
- * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/).
+ * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
  * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
  * @return *HooksCollection
  */

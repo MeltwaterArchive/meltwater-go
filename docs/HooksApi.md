@@ -1,6 +1,6 @@
 # \HooksApi
 
-All URIs are relative to *https://api.meltwater.io*
+All URIs are relative to *https://api.meltwater.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,7 +21,7 @@ Creates a hook for one of your predefined searches.  Delivers search results for
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/). | 
+ **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). | 
  **authorization** | **string**| &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... | 
  **v1Hooks** | [**PostV1Hooks**](PostV1Hooks.md)|  | 
 
@@ -52,7 +52,7 @@ Delete an existing hook.  Removes the hook and stops sending any search results 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/). | 
+ **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). | 
  **authorization** | **string**| &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... | 
  **id** | **string**| Hook ID received from creating a hook | 
 
@@ -83,7 +83,7 @@ List all hooks.     Delivers all previously generated hooks.    Requires an OAut
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/). | 
+ **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). | 
  **authorization** | **string**| &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... | 
 
 ### Return type

@@ -1,6 +1,6 @@
 # \OauthApi
 
-All URIs are relative to *https://api.meltwater.io*
+All URIs are relative to *https://api.meltwater.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Create an OAuth2 access token based on the provided `client_id` and `client_secr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/). | 
+ **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). | 
  **authorization** | **string**| &#x60;client_id:client_secret&#x60;  Basic Auth (RFC2617) credentials. Must contain the realm &#x60;Basic&#x60; followed by a Base64-encoded &#x60;client_id&#x60;:&#x60;client_secret&#x60; pair.   #### Example:      Basic aAlfbb1haWxDSXhhDXxxZWKJAyZXQ&#x3D; | 
  **grantType** | **string**| OAuth2 grant type, use &#x60;client_credentials&#x60; | 
  **scope** | **string**| OAuth2 scope, use &#x60;search&#x60; | 

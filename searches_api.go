@@ -51,7 +51,7 @@ func NewSearchesApiWithBasePath(basePath string) *SearchesApi {
  * List your saved searches.
  * List your saved searches.
  *
- * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.io](https://developer.meltwater.io/admin/applications/).
+ * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
  * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
  * @return *SearchesCollection
  */
