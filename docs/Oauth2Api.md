@@ -1,10 +1,10 @@
-# \OauthApi
+# \Oauth2Api
 
 All URIs are relative to *https://api.meltwater.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateToken**](OauthApi.md#CreateToken) | **Post** /oauth2/token | Create an access token
+[**CreateToken**](Oauth2Api.md#CreateToken) | **Post** /oauth2/token | Create an access token
 
 
 # **CreateToken**
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Create an access token
 
-Create an OAuth2 access token based on the provided `client_id` and `client_secret`
+Create an OAuth2 access token based on the provided `client_id` and `client_secret`.  #### Appendix    The Base64-encoded `client_id`:`client_secret` string can be generated in a  terminal with following command:        $ echo -n \"your_client_id:your_client_secret\" | base64    <i>You will need `base64` installed.</i>
 
 
 ### Parameters

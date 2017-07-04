@@ -1,18 +1,18 @@
-# \SearchesApi
+# \Swagger_docApi
 
 All URIs are relative to *https://api.meltwater.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAllSearches**](SearchesApi.md#GetAllSearches) | **Get** /v2/searches | List your saved searches.
+[**GetCompleteSwaggerSpec**](Swagger_docApi.md#GetCompleteSwaggerSpec) | **Get** /v2/swagger_doc | Meltwater API Swagger Spec
 
 
-# **GetAllSearches**
-> SearchesCollection GetAllSearches($userKey, $authorization)
+# **GetCompleteSwaggerSpec**
+> GetCompleteSwaggerSpec($userKey)
 
-List your saved searches.
+Meltwater API Swagger Spec
 
-List your saved searches.
+Get the complete Swagger Spec that describes all Meltwater API endpoints.
 
 
 ### Parameters
@@ -20,11 +20,10 @@ List your saved searches.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userKey** | **string**| The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/). | 
- **authorization** | **string**| &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO... | 
 
 ### Return type
 
-[**SearchesCollection**](SearchesCollection.md)
+void (empty response body)
 
 ### Authorization
 
