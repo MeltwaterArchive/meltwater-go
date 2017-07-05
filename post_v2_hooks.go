@@ -10,17 +10,12 @@
 
 package swagger
 
-type Search struct {
+// Creates a hook for one of your predefined searches.
+type PostV2Hooks struct {
 
-	// Search id
-	SearchId int32 `json:"search_id,omitempty"`
+	// Target URL to send article results
+	TargetUrl string `json:"target_url"`
 
-	// Name of the search
-	Name string `json:"name,omitempty"`
-
-	// Date time of the last update of the search
-	Updated string `json:"updated,omitempty"`
-
-	// The type of results the search returns
-	Type_ string `json:"type,omitempty"`
+	// Search ID
+	SearchId int32 `json:"search_id"`
 }

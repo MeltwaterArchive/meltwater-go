@@ -13,42 +13,40 @@ package swagger
 import (
 	"net/url"
 	"strings"
-	"encoding/json"
 )
 
-type SearchesApi struct {
+type Swagger_docApi struct {
 	Configuration *Configuration
 }
 
-func NewSearchesApi() *SearchesApi {
+func NewSwagger_docApi() *Swagger_docApi {
 	configuration := NewConfiguration()
-	return &SearchesApi{
+	return &Swagger_docApi{
 		Configuration: configuration,
 	}
 }
 
-func NewSearchesApiWithBasePath(basePath string) *SearchesApi {
+func NewSwagger_docApiWithBasePath(basePath string) *Swagger_docApi {
 	configuration := NewConfiguration()
 	configuration.BasePath = basePath
 
-	return &SearchesApi{
+	return &Swagger_docApi{
 		Configuration: configuration,
 	}
 }
 
 /**
- * List your saved searches.
- * List your saved searches.
+ * Meltwater API Swagger Spec
+ * Get the complete Swagger Spec that describes all Meltwater API endpoints.
  *
  * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
- * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
- * @return *SearchesCollection
+ * @return void
  */
-func (a SearchesApi) GetAllSearches(userKey string, authorization string) (*SearchesCollection, *APIResponse, error) {
+func (a Swagger_docApi) GetCompleteSwaggerSpec(userKey string) (*APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Get")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/v2/searches"
+	localVarPath := a.Configuration.BasePath + "/v2/swagger_doc"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -81,23 +79,19 @@ func (a SearchesApi) GetAllSearches(userKey string, authorization string) (*Sear
 	}
 	// header params "user-key"
 	localVarHeaderParams["user-key"] = a.Configuration.APIClient.ParameterToString(userKey, "")
-	// header params "Authorization"
-	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
-	var successPayload = new(SearchesCollection)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)
 	localVarURL.RawQuery = localVarQueryParams.Encode()
-	var localVarAPIResponse = &APIResponse{Operation: "GetAllSearches", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	var localVarAPIResponse = &APIResponse{Operation: "GetCompleteSwaggerSpec", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
 	if localVarHttpResponse != nil {
 		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
 		localVarAPIResponse.Payload = localVarHttpResponse.Body()
 	}
 
 	if err != nil {
-		return successPayload, localVarAPIResponse, err
+		return localVarAPIResponse, err
 	}
-	err = json.Unmarshal(localVarHttpResponse.Body(), &successPayload)
-	return successPayload, localVarAPIResponse, err
+	return localVarAPIResponse, err
 }
 

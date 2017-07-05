@@ -16,39 +16,41 @@ import (
 	"encoding/json"
 )
 
-type SearchesApi struct {
+type Oauth2Api struct {
 	Configuration *Configuration
 }
 
-func NewSearchesApi() *SearchesApi {
+func NewOauth2Api() *Oauth2Api {
 	configuration := NewConfiguration()
-	return &SearchesApi{
+	return &Oauth2Api{
 		Configuration: configuration,
 	}
 }
 
-func NewSearchesApiWithBasePath(basePath string) *SearchesApi {
+func NewOauth2ApiWithBasePath(basePath string) *Oauth2Api {
 	configuration := NewConfiguration()
 	configuration.BasePath = basePath
 
-	return &SearchesApi{
+	return &Oauth2Api{
 		Configuration: configuration,
 	}
 }
 
 /**
- * List your saved searches.
- * List your saved searches.
+ * Create an access token
+ * Create an OAuth2 access token based on the provided &#x60;client_id&#x60; and &#x60;client_secret&#x60;.  #### Appendix    The Base64-encoded &#x60;client_id&#x60;:&#x60;client_secret&#x60; string can be generated in a  terminal with following command:        $ echo -n \&quot;your_client_id:your_client_secret\&quot; | base64    &lt;i&gt;You will need &#x60;base64&#x60; installed.&lt;/i&gt;
  *
  * @param userKey The &#x60;user_key&#x60; from [developer.meltwater.com](https://developer.meltwater.com/admin/applications/).
- * @param authorization &#x60;Oauth Access Token&#x60;    OAuth access token (RFC 6749). Must contain the access token type &#x60;Bearer&#x60;  followed by an OAuth access token.    #### Example:        Bearer KKwmfHwxsEoeMDTMAfxOpO...
- * @return *SearchesCollection
+ * @param authorization &#x60;client_id:client_secret&#x60;  Basic Auth (RFC2617) credentials. Must contain the realm &#x60;Basic&#x60; followed by a Base64-encoded &#x60;client_id&#x60;:&#x60;client_secret&#x60; pair.   #### Example:      Basic aAlfbb1haWxDSXhhDXxxZWKJAyZXQ&#x3D;
+ * @param grantType OAuth2 grant type, use &#x60;client_credentials&#x60;
+ * @param scope OAuth2 scope, use &#x60;search&#x60;
+ * @return *OAuth2Token
  */
-func (a SearchesApi) GetAllSearches(userKey string, authorization string) (*SearchesCollection, *APIResponse, error) {
+func (a Oauth2Api) CreateToken(userKey string, authorization string, grantType string, scope string) (*OAuth2Token, *APIResponse, error) {
 
-	var localVarHttpMethod = strings.ToUpper("Get")
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/v2/searches"
+	localVarPath := a.Configuration.BasePath + "/oauth2/token"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -62,7 +64,7 @@ func (a SearchesApi) GetAllSearches(userKey string, authorization string) (*Sear
 	}
 
 	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{  }
+	localVarHttpContentTypes := []string{ "application/x-www-form-urlencoded",  }
 
 	// set Content-Type header
 	localVarHttpContentType := a.Configuration.APIClient.SelectHeaderContentType(localVarHttpContentTypes)
@@ -83,12 +85,14 @@ func (a SearchesApi) GetAllSearches(userKey string, authorization string) (*Sear
 	localVarHeaderParams["user-key"] = a.Configuration.APIClient.ParameterToString(userKey, "")
 	// header params "Authorization"
 	localVarHeaderParams["Authorization"] = a.Configuration.APIClient.ParameterToString(authorization, "")
-	var successPayload = new(SearchesCollection)
+	localVarFormParams["grantType"] = a.Configuration.APIClient.ParameterToString(grantType, "")
+	localVarFormParams["scope"] = a.Configuration.APIClient.ParameterToString(scope, "")
+	var successPayload = new(OAuth2Token)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)
 	localVarURL.RawQuery = localVarQueryParams.Encode()
-	var localVarAPIResponse = &APIResponse{Operation: "GetAllSearches", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	var localVarAPIResponse = &APIResponse{Operation: "CreateToken", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
 	if localVarHttpResponse != nil {
 		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
 		localVarAPIResponse.Payload = localVarHttpResponse.Body()
